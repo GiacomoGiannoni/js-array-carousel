@@ -7,7 +7,7 @@ const imagesArray = [
 ];
 let slideAttiva = 0;
 const itemsDom = document.querySelector('.items');
-for (let i = 0; i < imagesArray; length, i++) {
+for (let i = 0; i < imagesArray.length; i++) {
     itemsDom.innerHTML += `<div class="item">
                             <img class="img-slide src=${imagesArray[i]}"/>
                             </div>`;
