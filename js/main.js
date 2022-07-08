@@ -9,7 +9,7 @@ let slideAttiva = 0;
 const itemsDom = document.querySelector('.items');
 for (let i = 0; i < imagesArray.length; i++) {
     itemsDom.innerHTML += `<div class="item">
-                            <img class="img-slide" "src=${imagesArray[i]}"/>
+                            <img class="img-slide" src="${imagesArray[i]}"/>
                             </div>`;
 };
 const itemList = document.getElementsByClassName('item');
@@ -19,11 +19,12 @@ const up = document.querySelector('.up');
 const down = document.querySelector('.down');
 up.addEventListener('click' ,
     function () {
-        circleList[slideAttiva].classList.remove('active');
+        
         itemList[slideAttiva].classList.remove('show');
         slideAttiva++;
+        itemList[slideAttiva].classList.add('show');
         up.classList.remove('hidden');
-        if (slideAttiva == itemList.lenght - 1) {
+        if (slideAttiva == itemList.length - 1) {
             next.classList.add('hidden');
         }
     }
@@ -31,9 +32,10 @@ up.addEventListener('click' ,
 
 down.addEventListener('click' ,
     function () {
-        circleList[slideAttiva].classList.remove('active');
+        
         itemList[slideAttiva].classList.remove('show');
         slideAttiva--;
+        itemList[slideAttiva].classList.add('show');
         if (slideAttiva == 00) {
             next.classList.add('hidden');
         }
