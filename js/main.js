@@ -33,7 +33,7 @@ down.addEventListener('click' ,
     function () {
         circleList[slideAttiva].classList.remove('active');
         itemList[slideAttiva].classList.remove('show');
-        slideAttiva++;
+        slideAttiva--;
         if (slideAttiva == 00) {
             next.classList.add('hidden');
         }
