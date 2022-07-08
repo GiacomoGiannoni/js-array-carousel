@@ -18,14 +18,13 @@ const circleList = document.querySelector('.up');
 const up = document.querySelector('.up');
 const down = document.querySelector('.down');
 up.addEventListener('click' ,
-    function () {
-        
+    function () {  
         itemList[slideAttiva].classList.remove('show');
         slideAttiva++;
         itemList[slideAttiva].classList.add('show');
-        up.classList.remove('hidden');
+        down.classList.remove('hidden');
         if (slideAttiva == itemList.length - 1) {
-            next.classList.add('hidden');
+            up.classList.add('hidden');
         }
     }
 );
@@ -36,8 +35,11 @@ down.addEventListener('click' ,
         itemList[slideAttiva].classList.remove('show');
         slideAttiva--;
         itemList[slideAttiva].classList.add('show');
+        up.classList.remove('hidden');
+
+        itemList[slideAttiva].classList.add('show');
         if (slideAttiva == 00) {
-            next.classList.add('hidden');
+            down.classList.add('hidden');
         }
     }
 );
